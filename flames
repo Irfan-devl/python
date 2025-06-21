@@ -1,0 +1,25 @@
+a=input("Yours: ")
+b=input("Partner: ")
+b1=list(b)
+c=len(a)
+d=len(b)
+e=c+d
+for i in range(len(a)):
+    for j in range(len(b1)):
+        if(a[i]==b1[j]):
+            b1.pop(j)
+            e=e-2
+            break
+print(b1)
+print(a)
+print(b)
+print(e)
+check=list("flames")
+b=0
+for i in range(0,5):
+    b=(b+(e-1))%(len(check))
+    check.pop(b)
+print(check)
+        
+        
+        
