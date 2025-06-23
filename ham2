@@ -1,0 +1,10 @@
+n=int(input("value1: "))
+while(n!=1):
+    p=str(n)
+    de=0
+    for i in p:
+        de=de+int(i)**2
+    n=de
+if(n==1):
+    print("it is round")
+    
