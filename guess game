@@ -1,0 +1,44 @@
+import random
+name1=input("enter ur name: ")
+name2=input("enter ur opponent: ")
+ran=[]
+while(len(ran)<5):
+    r=random.randint(1,11)
+    if(r not in ran):
+        ran.append(r)
+print("--------------------------------------")
+print("the computer have some 5 different integer in mind between(1-10)")
+print("there are 3 round each of you must choose different to check you are matching the computer")
+print("---------------------------------------")
+player1=[]
+s1=0
+player2=[]
+s2=0
+for i in range(3):
+    print("--------------------------Turn-{}---------------------------".format(i+1))
+    a=int(input("enter player1 number: "))
+    b=int(input("enter player2 number"))
+    player1.append(a)
+    player2.append(b)
+    if(a in ran):
+        s1=s1+1
+        print("player1 is correct")
+    else:
+        print("player1 is wrong")
+    if(b in ran):
+        s2=s1+1
+        print("player2 is correct")
+    else:
+        print("player2 is wrong")
+    print("-----------------------------------------------")
+print("************************************************")
+if(s1>s2):
+    print("----------------------The winner is {}------------------------------------".format(name1))
+elif(s2>s1):
+    print("----------------------The winner is {}".format(name2))
+else:
+    print("it is draw")
+print("The scorecard:")
+print("{}'s score is:{} and the answer produced{}".format(name1,s1,player1))
+print("{}'s score is:{} and the answer produced{}".format(name2,s2,player2))
+        
