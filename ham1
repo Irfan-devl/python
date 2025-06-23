@@ -1,0 +1,12 @@
+x=int(input("value1:"))
+y=int(input("value2:"))
+z=int(input("value3:"))
+at=0
+i=0
+while(at!=x):
+    i=i+1
+    if(i%2!=0):
+        at=at+y
+    else:
+        at=at-z
+print(i,"minutes")
