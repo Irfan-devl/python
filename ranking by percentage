@@ -1,0 +1,18 @@
+students=[
+    {"name":"irfan","dept":"cse","marks":[100,100,99]},
+    {"name":"hamjath","dept":"cse","marks":[23,9,13]},
+    {"name":"yuki","dept":"cse","marks":[89,69,38]},
+    {"name":"irfan","dept":"cse","marks":[100,100,99]},
+    {"name":"irfan","dept":"cse","marks":[100,100,99]}
+]
+for i in students:
+    tot=sum(i["marks"])
+    avg=tot//3
+    i["percentage"]=avg
+print(students)
+p=["1st","2nd","3rd","4th","5th"]
+o=0
+students.sort(key=lambda x:x["percentage"],reverse=True)
+for i in students:
+    print(f"{i["name"]} is scored {i["percentage"]} % and ranked {p[o]}")
+    o=o+1
