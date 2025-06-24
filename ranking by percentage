@@ -1,18 +1,21 @@
+from tabulate import tabulate
 students=[
     {"name":"irfan","dept":"cse","marks":[100,100,99]},
     {"name":"hamjath","dept":"cse","marks":[23,9,13]},
     {"name":"yuki","dept":"cse","marks":[89,69,38]},
-    {"name":"irfan","dept":"cse","marks":[100,100,99]},
-    {"name":"irfan","dept":"cse","marks":[100,100,99]}
+    {"name":"ash","dept":"cse","marks":[45,33,99]},
+    {"name":"ron","dept":"cse","marks":[83,40,59]}
 ]
 for i in students:
     tot=sum(i["marks"])
     avg=tot//3
     i["percentage"]=avg
 print(students)
-p=["1st","2nd","3rd","4th","5th"]
-o=0
+p=["name","dept","marks","percentage","rank"]
+ran=["1st","2nd","3rd","4th","5th"]
 students.sort(key=lambda x:x["percentage"],reverse=True)
+pos=0
 for i in students:
-    print(f"{i["name"]} is scored {i["percentage"]} % and ranked {p[o]}")
-    o=o+1
+    i["rank"]=ran[pos]
+    pos=pos+1
+print(tabulate(students,headers="keys",tablefmt="grid"))
