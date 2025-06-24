@@ -1,0 +1,16 @@
+name=["a","b","c","d","e","f","g","h","i","j"]
+memo=[0,1,1,1,2,2,1,2,1,2]
+salary=[1000,2000,3000,4500,2000,5000,1500,2300,1300,1100]
+res=list(zip(salary,memo,name))
+remove=[i for i in res if i[0]>4000]
+remain=[i for i in res if i[0]<=4000]
+for i in remain:
+    if(i[1]>1):
+        remove.append(i)
+    if(len(remove)==5):
+        break
+print(remove)
+posi=1
+for i in remove:
+    print(f"{posi}  {i[2]} is removed his salary is {i[0]} and his memo is {i[1]}")
+    posi=posi+1
