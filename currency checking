@@ -1,0 +1,12 @@
+amt=(int(input("amt: ")))
+num=[500,200,100,50,20,10,5,2,1]
+qut={}
+for i in num:
+    if(amt>=i):
+        tot=amt//i
+        qut[i]=tot
+        amt=amt-i
+print(qut)
+        
+     
+    
