@@ -1,0 +1,31 @@
+def circle():
+    ra=(int(input("enter the radius: ")))
+    print(ra*ra*3.14)
+def square(sq):
+    print(sq*sq)
+def rectangle():
+    le=(int(input("enter the length: ")))
+    bre=(int(input("enter the bredth: ")))
+    return le*bre
+def triangle(br,he):
+    return (0.5*(br*he))
+print("1 is circle, 2 is square, 3 is rectangle, 4 is triangle")
+ni=0
+while(ni!=1):
+    a=int(input("enter the type of the shape: "))
+    match a:
+        case 1:
+            circle()
+        case 2:
+            sq=int(input("enter the a value: "))
+            square(sq)
+        case 3:
+            res=rectangle()
+            print(res)
+        case 4:
+            br=int(input("enter the base value: "))
+            he=int(input("enter the height value: "))
+            res=triangle(br,he)
+            print(res)
+        case _:
+            ni=1
