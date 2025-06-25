@@ -1,0 +1,28 @@
+n=int(input("enter the number: "))
+cou=1
+s=n
+co1=[]
+n1=2
+while(s!=1):
+    if(n%n1==0 and cou*n1<=n):
+        count=0
+        if(n1!=2):
+            for i in range(2,n1):
+                if(n1%i==0):
+                    count=count+1
+        if(count==0 and s%n1==0 and cou*n1<=n):
+            cou=cou*n1
+            co1.append(n1)
+            s=s//n1
+        else:
+            n1=n1+1
+    else:
+        n1=n1+1
+p=",".join(str(i) for i in co1)
+print(p)
+print(co1)
+                
+            
+            
+            
+        
