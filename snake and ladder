@@ -1,0 +1,66 @@
+import random
+at=0
+ar=0
+li1=[]
+li11=[]
+li2=[]
+li22=[]
+i=1
+while(at<100 and ar<100):
+    pl=input(f"roll player{i}")
+    target=random.randint(1,6)
+    print("dice number: ",target)
+    if(i==1):
+        if(at+target<=100):
+            at=at+target
+            li1.append(target)
+            if(at==98):
+                print("down: ",at)
+                at=56
+            if(at==76):
+                print("down: ",at)
+                at=65
+            if(at==17):
+                print("down: ",at)
+                at=9
+            if(at==80):
+                print("down: ",at)
+                at=81
+            if(at==48):
+                print("down: ",at)
+                at=39
+            if(at==25):
+                print("down: ",at)
+                at=9
+            li11.append(at)
+            print("you're at: ",at)
+        i=2
+    else:
+        if(ar+target<=100):
+            ar=ar+target
+            li2.append(target)
+            if(ar==98):
+                print("down: ",ar)
+                ar=56
+            if(ar==76):
+                print("down: ",ar)
+                ar=65
+            if(ar==17):
+                print("down: ",ar)
+                ar=9
+            if(ar==80):
+                print("down: ",ar)
+                ar=81
+            if(ar==48):
+                print("down: ",ar)
+                ar=39
+            if(ar==25):
+                print("down: ",ar)
+                ar=9
+            li22.append(ar)
+            print("you're at: ",ar)
+        i=1
+if(at==100):
+    print("player 1 is winner")
+else:
+    print("player2 is winner ")
