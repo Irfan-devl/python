@@ -1,0 +1,26 @@
+li=[]
+print("enter the 5 names: ")
+for i in range(5):
+    a=input()
+    li.append(a)
+print(li)
+b=input("chcking name: ")
+maxi=0
+name=""
+for i in li:
+    if(len(b)==len(i)):
+        match=[0]*len(i)
+        count=0
+        for j in range(len(b)):
+            for k in range(len(i)):
+                if(b[j]==i[k] and match[k]==0):
+                    count=count+1
+                    match[k]=1
+                    break
+        if(maxi<count):
+            maxi=count
+            name=i
+if name:
+    print(f"Did you mean:{name}?")
+else:
+    print("similar is not available")
