@@ -1,0 +1,14 @@
+class per:
+    co="reddit"
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def display(self):
+        print("name: ",self.name)
+        print("age: ",self.age)
+        print("company: ",per.co)
+s=per("irfan","20")
+s1=per("agar","18")
+s.display()
+s1.display()
+        
