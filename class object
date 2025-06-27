@@ -1,0 +1,21 @@
+class Recc:
+    def dim(self,le,br):
+        self.le=le
+        self.br=br
+    def area(self):
+        return self.le*self.br
+li=[]
+c=int(input("enter the number rec: "))
+for i in range(c):
+    r=Recc()
+    le=int(input("enter the length: "))
+    br=int(input("enter the breadth: "))
+    r.dim(le,br)
+    li.append(r)
+pos=1
+for i in li:
+    print("---------------------------------------")
+    print(f"Area of rectange {pos}")
+    print()
+    print("Area of the rectangle is ",i.area())
+    pos=pos+1
