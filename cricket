@@ -1,0 +1,19 @@
+import random
+n=int(input("enter the no of teams: "))
+teams=[]
+for i in range(n):
+    teams.append(input())
+meet=int(input("enter no of sparings: "))
+matches=[]
+for i in range(n-1):
+    for j in range(i+1,n):
+        for k in range(meet):
+            matches.append([teams[i],teams[j]])
+random.shuffle(matches)
+for i in range(len(matches)):
+    if(i+1<len(matches) and matches[i][0]==matches[i+1][0] or matches[i][0]==matches[i+1][1] and matches[i][1]==matches[i+1][0] or matches[i][1]==matches[i+1][1]):
+        random.shuffle(matches)
+hh=1
+for i in matches:
+    print(f"matches {hh} is between {i[0]} vs {i[1]}")
+    hh=hh+1
