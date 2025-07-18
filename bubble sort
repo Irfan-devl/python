@@ -1,0 +1,12 @@
+def bubble(arr):
+    for i in range(0,len(arr)):
+        swap=False
+        for j in range(1,len(arr)-i):
+            if(arr[j]<arr[j-1]):
+                arr[j],arr[j-1]=arr[j-1],arr[j]
+                swap=True
+        if(not swap):
+            break
+arr=[]
+bubble(arr)
+print(arr)
