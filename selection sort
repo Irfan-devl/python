@@ -1,0 +1,14 @@
+def selection(arr):
+    for i in range(0,len(arr)):
+        last=len(arr)-i-1
+        maxin=maxindex(arr,0,last)
+        arr[last],arr[maxin]=arr[maxin],arr[last]
+def maxindex(arr,first,last):
+    maxi=first
+    for i in range(first,last+1):
+        if(arr[maxi]<arr[i]):
+            maxi=i
+    return maxi
+arr=[5,3,7,2,4]
+selection(arr)
+print(arr)
