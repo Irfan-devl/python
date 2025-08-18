@@ -1,0 +1,37 @@
+# Function to calculate cross product
+def cross(o, a, b):
+    return (a[0]-o[0]) * (b[1]-o[1]) - (a[1]-o[1]) * (b[0]-o[0])
+
+# Build lower hull (monotone chain)
+def lower_hull(points):
+    pts = sorted(points)  # sort by x, then y
+    lower = []
+    for p in pts:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
+            lower.pop()
+        lower.append(p)
+    return lower
+
+# Distance between two points
+def distance(p1, p2):
+    dx = p2[0] - p1[0]
+    dy = p2[1] - p1[1]
+    return (dx*dx + dy*dy) ** 0.5
+
+# Length of the polyline
+def polyline_length(poly):
+    total = 0.0
+    for i in range(len(poly)-1):
+        total += distance(poly[i], poly[i+1])
+    return total
+
+# Main
+n = int(input().strip())
+points = []
+for _ in range(n):
+    x, y = map(int, input().split())
+    points.append((x, y))
+
+lh = lower_hull(points)
+length = polyline_length(lh)
+print(int(length+0.5))
