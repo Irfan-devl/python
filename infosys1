@@ -1,0 +1,18 @@
+def cou(m,e):
+    count=0
+    for i,j in m.items():
+        if e>=i:
+            count+=1
+            e+=j
+        else:
+            return count
+    return count
+monster={}
+n=int(input())
+e=int(input())
+for i in range(n):
+    monster[int(input())]=None
+for i in monster.keys():
+    monster[i]=int(input())
+monster1=dict(sorted(monster.items()))
+print(cou(monster1,e))
