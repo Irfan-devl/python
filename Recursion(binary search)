@@ -1,0 +1,12 @@
+def bi(n,s,e,t):
+    if s>e:
+        return -1
+    m=(s+e)//2
+    if n[m]==t:
+        return m
+    if n[m]>t:
+        return bi(n,s,m-1,t)
+    return bi(n,m+1,e,t)
+n=[2,5,8,12,15,17,19,23,27,29,31,35]
+t=15
+print(bi(n,0,len(n),t))
