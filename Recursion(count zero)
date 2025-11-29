@@ -1,0 +1,9 @@
+def f(i,n):
+    j=i
+    if n==0:
+        return j
+    m=n%10
+    if(m==0):
+        j+=1
+    return f(j,n//10)
+print(f(0,int(input())))
